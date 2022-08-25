@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import { mount } from '@vue/test-utils'
-import Component from '../demo.vue';
+import Component from '../components/elements/select.vue';
 
 globalThis.Vue = Vue;
 

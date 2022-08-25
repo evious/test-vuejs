@@ -1,0 +1,111 @@
+@charset "utf-8";
+
+// Import a Google Font
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
+
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700");
+
+// Set your brand colors
+$purple: #8a4d76;
+$pink: #fa7c91;
+$brown: #757763;
+$beige-light: #d0d1cd;
+$beige-lighter: #eff0eb;
+
+// Update Bulma's global variables
+$family-sans-serif: "Nunito", sans-serif;
+$grey-dark: $brown;
+$grey-light: $beige-light;
+$primary: $purple;
+$link: $pink;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+// Update some of Bulma's component variables
+$body-background-color: $beige-lighter;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+// Import only what you need from Bulma
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/form/_all.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+
+.inver-select::after {
+    margin-top: 0 !important;
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    transform: rotate(135deg) !important;
+    color: #242d2e !important;
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+    text-align: left;
+    outline: none;
+    height: 100% !important;
+    line-height: 47px;
+
+    .box {
+        border-radius: 6px;
+        box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%),
+            0 0 0 1px rgb(10 10 10 / 2%);
+    }
+
+    .selected {
+        background-color: white;
+        border-radius: 6px;
+        border: none;
+        color: #cfd6df;
+        cursor: pointer;
+        user-select: none;
+    }
+
+    .not-select {
+        color: #a0aec0 !important;
+        font-weight: normal !important;
+    }
+
+    input {
+        text-transform: capitalize;
+    }
+
+    .select:not(.is-multiple):not(.is-loading)::after {
+        border-color: #a0aec0;
+        right: 1.125em;
+        z-index: 4;
+    }
+
+    .is-medium {
+        font-weight: 600;
+    }
+
+    .select select:focus,
+    .textarea:focus,
+    .input:focus,
+    .select select.is-focused,
+    .is-focused.textarea,
+    .is-focused.input,
+    .select select:active,
+    .textarea:active,
+    .input:active,
+    .select select.is-active,
+    .is-active.textarea,
+    .is-active.input {
+        border-color: #a0aec000;
+        box-shadow: 0 0 0 0.125em #a0aec000;
+    }
+
+    .selectHide {
+        display: none;
+    }
+}
